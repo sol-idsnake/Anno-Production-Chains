@@ -1,6 +1,6 @@
 {
   "name": "anno-1800-ketten",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.6",
@@ -16,6 +16,9 @@
     "styled-components": "^5.2.1",
     "typescript": "^4.0.5",
     "web-vitals": "^0.2.4"
+  },
+  "devDependencies": {
+    "@types/styled-components": "^5.1.4"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -40,8 +43,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "@types/styled-components": "^5.1.4"
   }
 }
