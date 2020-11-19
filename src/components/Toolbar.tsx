@@ -1,5 +1,5 @@
 import React from 'react';
-import toggle from '../images/toggle/icon_toggle.png';
+import toggle from '../images/icon_toggle.png';
 import styled from 'styled-components';
 
 type Props = {
@@ -61,9 +61,7 @@ const Toolbar: React.FC<Props> = ({ industries, setIndustries }: Props) => {
         alt={item.final_product}
         className={item.active ? 'toggleOn' : 'toggleOff'}
         onClick={(e) => handleImageClick(e)}
-        src={`../images/${item.final_product}/${
-          item.steps[item.steps.length - 1].img
-        }`}
+        src={item.steps[item.steps.length - 1].img}
       />
     </div>
   ));
