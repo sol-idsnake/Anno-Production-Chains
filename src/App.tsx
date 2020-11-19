@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Toolbar } from './components/Toolbar';
 import Economy from './components/Economy';
 import { items } from './lib/db';
+import './App.css';
 
 const App: React.FC = () => {
   const [industries, setIndustries] = useState<{
@@ -14,12 +15,11 @@ const App: React.FC = () => {
 
   useEffect(() => {
     if (industries.active.length === 0) {
-      const newArr = items.map((x) => {
-        return {
-          ...x,
-          active: true,
-        };
-      });
+      const newArr = items.map((x) => ({
+        ...x,
+        active: true,
+      }));
+
       setIndustries({
         active: newArr,
         toggleAll: industries.toggleAll,

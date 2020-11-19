@@ -1,39 +1,29 @@
 import React from 'react';
 import { title } from '../lib/formatTitle';
+import IndustryGroup from './IndustryGroup';
+import { Step } from './IndustryGroup';
+import { IndustryWrapper } from '../styles/IndustryWrapper';
 
-// type Item = {
-//   active: boolean;
-//   final_product: string;
-//   level: string;
-//   output: number;
-//   steps: Step[];
-// };
-// type Step = {
-//   img: string;
-//   name: string;
-//   needed: number;
-// };
+type IndustryType = {
+  active: boolean;
+  final_product: string;
+  level: string;
+  output: number;
+  steps: Step[];
+};
 
-const Industry = ({ industry }) => {
-  const chainWorks = (industry) => {
-    return (
-      <>
-        {industry.steps.map((y, index: number) => {
-          return (
-            <div key={`int-${index}`} className="factory">
-              <div className="amountNeeded">{y.needed}x</div>
-              <div className="int-img">
-                <img src={y.img} alt="" />
-              </div>
-              <div className="int-name">{title(y.name)}</div>
-            </div>
-          );
-        })}
-      </>
-    );
-  };
+const Industry: React.FC<{ industry: IndustryType }> = ({ industry }) => {
+  const unit: string = `unit${industry.output > 0 ? 's' : null}/min`;
 
-  return <div className="group">{chainWorks(industry)}</div>;
+  return (
+    <IndustryWrapper className="industry">
+      <div className="header">
+        <div>{title(industry.final_product)}</div>
+        <div>{`${industry.output} ${unit}`}</div>
+      </div>
+      <IndustryGroup industryGroup={industry.steps} />
+    </IndustryWrapper>
+  );
 };
 
 export default Industry;

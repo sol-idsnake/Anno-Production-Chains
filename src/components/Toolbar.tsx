@@ -1,6 +1,7 @@
 import React from 'react';
 import toggle from '../images/icon_toggle.png';
 import styled from 'styled-components';
+import { StyledToolbar } from '../styles/ToolbarStyles';
 
 type Props = {
   industries: {
@@ -14,27 +15,6 @@ type Props = {
     }>
   >;
 };
-
-const SectioWrapper = styled.section`
-  display: grid;
-  gap: 15px;
-  grid-template-columns: repeat(auto-fill, 30px);
-  grid-template-rows: repeat(auto-fill, 30px);
-  margin: 60px auto;
-  max-width: 600px;
-
-  div:not(:last-of-type) {
-    /* margin-right: 15px; */
-  }
-  img {
-    height: 30px;
-    width: 30px;
-
-    &.toggleOff {
-      filter: grayscale(100%);
-    }
-  }
-`;
 
 const Toolbar: React.FC<Props> = ({ industries, setIndustries }: Props) => {
   const handleImageClick = (event: React.MouseEvent<HTMLImageElement>) => {
@@ -67,7 +47,7 @@ const Toolbar: React.FC<Props> = ({ industries, setIndustries }: Props) => {
   ));
 
   return (
-    <SectioWrapper>
+    <StyledToolbar>
       <div>
         <img
           alt="toggle"
@@ -77,7 +57,7 @@ const Toolbar: React.FC<Props> = ({ industries, setIndustries }: Props) => {
         ></img>
       </div>
       {images}
-    </SectioWrapper>
+    </StyledToolbar>
   );
 };
 
