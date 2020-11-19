@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const IndustryWrapper = styled.div`
+export const StyledIndustry = styled.div`
   border: 1px solid darkgrey;
 
   div.header {
@@ -13,22 +13,5 @@ export const IndustryWrapper = styled.div`
     margin: 3px 3px 0;
     padding: 10px;
     justify-content: space-around;
-  }
-  .group {
-    display: flex;
-    flex-wrap: wrap;
-
-    div.factory {
-      box-sizing: border-box;
-      padding: 20px;
-      text-align: center;
-      width: 140px;
-
-      .int-img {
-        img {
-          width: 35px;
-        }
-      }
-    }
   }
 `;

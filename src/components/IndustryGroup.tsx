@@ -1,5 +1,6 @@
 import React from 'react';
 import { title } from '../lib/formatTitle';
+import { StyledIndustryGroup } from '../styles/IndustryGroupStyles';
 
 export type Step = {
   img: string;
@@ -10,7 +11,7 @@ export type Step = {
 const IndustryGroup: React.FC<{ industryGroup: Array<Step> }> = ({
   industryGroup,
 }) => (
-  <div className="group">
+  <StyledIndustryGroup className="group">
     {industryGroup.map((y: Step, index: number) => {
       return (
         <div key={`int-${index}`} className="factory">
@@ -22,7 +23,7 @@ const IndustryGroup: React.FC<{ industryGroup: Array<Step> }> = ({
         </div>
       );
     })}
-  </div>
+  </StyledIndustryGroup>
 );
 
 export default IndustryGroup;

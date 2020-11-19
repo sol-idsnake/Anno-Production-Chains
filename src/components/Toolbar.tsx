@@ -1,6 +1,5 @@
 import React from 'react';
 import toggle from '../images/icon_toggle.png';
-import styled from 'styled-components';
 import { StyledToolbar } from '../styles/ToolbarStyles';
 
 type Props = {
